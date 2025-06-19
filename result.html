@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play4Win - Results</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <script>
+    function updateCountdown(id, hour) {
+      const now = new Date();
+      const target = new Date();
+      target.setHours(hour, 0, 0, 0);
+      if (now > target) target.setDate(target.getDate() + 1);
+      const diff = target - now;
+      const hrs = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      document.getElementById(id).textContent = `${hrs}h ${mins}m ${secs}s`;
+    }
+    setInterval(() => {
+      updateCountdown("count3pm", 15);
+      updateCountdown("count9pm", 21);
+    }, 1000);
+  </script>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Play4Win Logo" class="logo">
+    <h1>Play4Win</h1>
+    <p class="tagline">Make Money From Show Your Skills</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="result.html">Results</a>
+    <a href="rules.html">Rules</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="category">
+      <h2>🏆 Latest Tournament Results</h2>
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS4bR0eJw9rAZVn-3bG7hU2ibDqvWe3soRKwG1vAcPiamRe5bzpL_-1U46dFCnTHaakVxEA3dEGwc8i/pubhtml?widget=true&amp;headers=false" width="100%" height="500px" style="border:none;"></iframe>
+    </section>
+
+    <section class="category">
+      <h2>⏳ Next Tournament Countdowns</h2>
+      <ul>
+        <li><strong>3 PM Match:</strong> <span id="count3pm">Loading...</span></li>
+        <li><strong>9 PM Match:</strong> <span id="count9pm">Loading...</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Play4Win. All rights reserved. <br>
+    <a href="https://youtube.com/@gwd_pirates" target="_blank">YouTube</a> |
+    <a href="https://www.instagram.com/gwd_pirates" target="_blank">Instagram</a> |
+    <a href="https://whatsapp.com/channel/0029VaqnWdwKWEKimvCpg23K" target="_blank">WhatsApp</a>
+  </footer>
+</body>
+</html>
