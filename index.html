@@ -80,17 +80,43 @@
 
 <!-- Instagram Button -->
 <a href="https://www.instagram.com/gwd_pirates" target="_blank" class="insta-btn">Instagram</a>
+<!-- Neon Style Button -->
+<button id="musicToggle" style="
+  margin-top: 50px;
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: #0ff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  transition: 0.3s ease;
+">🔇 Music Off</button>
+
+<!-- Audio File -->
 <audio id="bgmusic" loop>
   <source src="bgmusic.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
 </audio>
 
+<!-- Script to Toggle Music -->
 <script>
-  function playMusicOnce() {
-    const music = document.getElementById("bgmusic");
-    music.play();
-    document.removeEventListener("click", playMusicOnce); // sirf ek baar play ho
-  }
+  const music = document.getElementById("bgmusic");
+  const toggleBtn = document.getElementById("musicToggle");
+  let isPlaying = false;
 
-  document.addEventListener("click", playMusicOnce);
+  toggleBtn.addEventListener("click", function () {
+    if (!isPlaying) {
+      music.play();
+      toggleBtn.innerHTML = "🔊 Music On";
+      toggleBtn.style.boxShadow = "0 0 20px #0f0, 0 0 40px #0f0";
+      isPlaying = true;
+    } else {
+      music.pause();
+      toggleBtn.innerHTML = "🔇 Music Off";
+      toggleBtn.style.boxShadow = "0 0 15px #f00, 0 0 30px #f00";
+      isPlaying = false;
+    }
+  });
 </script>
