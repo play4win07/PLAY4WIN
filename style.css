@@ -51,4 +51,21 @@ footer { background: #111; color: #888; text-align: center; padding: 20px; font-
 .animated-navbar a::after { right: 0; bottom: 0; }
 
 .animated-navbar a:hover::before, .animated-navbar a:hover::after { width: 100%; }
-
+.whatsapp-btn, .insta-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  padding: 10px 15px;
+  background: #25D366;
+  color: #000;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 10px #25D366;
+  margin-top: 10px;
+}
+.insta-btn {
+  bottom: 60px;
+  background: #E1306C;
+  box-shadow: 0 0 10px #E1306C;
+}
