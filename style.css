@@ -69,10 +69,4 @@ footer { background: #111; color: #888; text-align: center; padding: 20px; font-
   background: #E1306C;
   box-shadow: 0 0 10px #E1306C;
 }
-body {
-  background: url('freefire_banner.png') no-repeat center center fixed;
-  background-size: cover;
-  background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.8); /* black overlay so text dikhe */
-  color: white;
-}
+  
