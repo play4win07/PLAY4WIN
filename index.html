@@ -80,3 +80,17 @@
 
 <!-- Instagram Button -->
 <a href="https://www.instagram.com/gwd_pirates" target="_blank" class="insta-btn">Instagram</a>
+<audio id="bgmusic" loop>
+  <source src="bgmusic.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  function playMusicOnce() {
+    const music = document.getElementById("bgmusic");
+    music.play();
+    document.removeEventListener("click", playMusicOnce); // sirf ek baar play ho
+  }
+
+  document.addEventListener("click", playMusicOnce);
+</script>
